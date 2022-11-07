@@ -1,0 +1,22 @@
+{
+  "name": "backendcoder",
+  "version": "1.0.0",
+  "description": "data de backend NodeJs CoderHouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andru-1987/backend_coder40845.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andru-1987/backend_coder40845/issues"
+  },
+  "homepage": "https://github.com/Andru-1987/backend_coder40845#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
