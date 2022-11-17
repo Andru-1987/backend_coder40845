@@ -4,7 +4,7 @@
   "description": "data de backend NodeJs CoderHouse",
   "main": "index.js",
   "scripts": {
-    "dev":"tsc --watch"
+    "dev": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   "homepage": "https://github.com/Andru-1987/backend_coder40845#readme",
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "dotenv": "^16.0.3",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "telegraf": "^4.10.0"
   }
 }
