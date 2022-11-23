@@ -165,3 +165,25 @@ const dataReader = () =>{
 
 
 dataReader();
+
+
+
+
+const fs=require('fs')
+
+class Data{
+
+async getAll(){
+
+    return await fs.promises.readFile('./productos.json','utf-8')
+
+    }
+
+}
+
+let data=new Data();
+
+console.log(data.getAll());
+
+
+

@@ -11,11 +11,17 @@
 
 */
 
+const { fstat } = require("fs");
+
+
+// const generator = (size) => [...Array(size).fill()].map(e => parseInt(Math.random() * 20))
+
+// const array = generator(1000) 
+
+// console.log(array);
+
+
 /*
-
-const generator = (size) => [...Array(size).fill()].map(e => parseInt(Math.random() * 20))
-
-
 const createObject = (array) => {
     
     let objetoIterador = {} ;
@@ -49,73 +55,100 @@ const productos = [
 
 
 
-class Productos{
-    constructor(data){
-        this.productos = data;
+console.log(productos.reduce((a,b) => a + b.nombre + ',','').slice(0,-1));
+
+
+// class Productos{
+//     constructor(data){
+//         this.productos = data;
+//     }
+
+//     setProducto(producto){
+//         if(producto){
+
+//             this.productos.push(producto)
+//         }
+//         else{
+//             console.log('no fue seteado ninguno');
+//         }
+//     }
+// }
+
+// class ProductosBuilder{
+
+// //patron builder
+
+//     constructor(prd){
+//         this.productos = new Productos(prd);
+//     }
+
+//     display(header = 'Lista nombres: '){
+//         this.productos.nombres = this.productos.productos.reduce((a,b) => a + b.nombre + ',', header).slice(0,-1)
+//         return this
+//     }
+
+//     totalPrecio(){
+//         this.productos.total =parseFloat(this.productos.productos.reduce( (a,b) => a+b.precio, 0).toFixed(2))
+//         return this  
+//     }
+
+//     avgProductos(){
+        
+//         this.productos.avg = parseFloat((this.productos.total/ this.productos.productos.length).toFixed(2))
+//         return this
+//     }
+
+//     max(){
+        
+//         this.productos.max = Math.max( ...this.productos.productos.map(e => e.precio) )
+//         return this
+//     }
+
+//     min(){
+
+//         this.productos.min = Math.min(...this.productos.productos.map(e => e.precio) )
+//         return this
+
+//     }
+
+
+//     build(){
+//         return this.productos
+//     }
+// }
+
+
+// let prd =   new ProductosBuilder(productos)
+//                 .display()
+//                 // .totalPrecio()
+//                 // .avgProductos()
+//                 // .max()
+//                 .min()
+//                 // .build() //me termina de confeccionar o construir el objecto
+
+
+// console.log(prd);
+
+
+const fs = require('fs')
+
+class Data{
+
+    async getAll(){
+
+       return fs.promises.readFile('./productos.json','utf-8')
+        .then( value => JSON.parse(value))
+        .then( productos =>  this.productos = productos)
+        .catch(e => console.log(e))
+        
     }
 
-    setProducto(producto){
-        if(producto){
-
-            this.productos.push(producto)
-        }
-        else{
-            console.log('no fue seteado ninguno');
-        }
-    }
 }
 
-class ProductosBuilder{
 
-//patron builder
+let data = new Data();
 
-    constructor(prd){
-        this.productos = new Productos(prd);
-    }
-
-    display(header = 'Lista nombres: '){
-        this.productos.nombres = this.productos.productos.reduce((a,b) => a + b.nombre + ',', header).slice(0,-1)
-        return this
-    }
-
-    totalPrecio(){
-        this.productos.total =parseFloat(this.productos.productos.reduce( (a,b) => a+b.precio, 0).toFixed(2))
-        return this  
-    }
-
-    avgProductos(){
-        
-        this.productos.avg = parseFloat((this.productos.total/ this.productos.productos.length).toFixed(2))
-        return this
-    }
-
-    max(){
-        
-        this.productos.max = Math.max( ...this.productos.productos.map(e => e.precio) )
-        return this
-    }
-
-    min(){
-
-        this.productos.min = Math.min(...this.productos.productos.map(e => e.precio) )
-        return this
-
-    }
+data.getAll()
+.then( () => console.log(data.productos))
 
 
-    build(){
-        return this.productos
-    }
-}
-
-
-let prd =   new ProductosBuilder(productos)
-                .display()
-                // .totalPrecio()
-                // .avgProductos()
-                // .max()
-                .min()
-                // .build() //me termina de confeccionar o construir el objecto
-
-
-console.log(prd);
