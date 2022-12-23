@@ -1,0 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+*{
+    background-color: whitesmoke;
+    font-family: 'Dancing Script', cursive;
+}
+
+.bar{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.bar > * {
+    margin: 10px;
+}

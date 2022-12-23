@@ -1,0 +1,20 @@
+<% if (bd.length == 0) {%>
+    <hr>
+    <h1> AUN NO HAY DATA GUARDADA</h1>
+
+<%} else{ %>
+    <hr>
+    <ul class="list-group list-group-flush">
+        <% bd.forEach( person =>{ %>
+            <li class="list-group-item">
+                NOMBRE: <strong><%= person.nombre %></strong>
+                EMAIL: <strong><%= person.apellido %></strong>
+                EDAD: <strong><%= person.edad %></strong>
+                <img src="<%= person.url %>" alt="pic" width="100px" >
+                <picture></picture>
+            </li>
+            <% }) %>
+            
+    </ul>
+<% }%>
+

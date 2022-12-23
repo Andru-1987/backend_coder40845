@@ -1,0 +1,43 @@
+{
+  "name": "backendcoder",
+  "version": "1.0.0",
+  "description": "data de backend NodeJs CoderHouse",
+  "main": "index.js",
+  "scripts": {
+    "backend": "nodemon ./clase9/motor_custom/server.js",
+    "temp_hand": "nodemon ./clase9/handlebars.js",
+    "pug": "nodemon ./clase9/pug/pug_server.js",
+    "ejs": "nodemon ./clase9/ejs/ejs.js",
+    "ws": "node ./clase10/websocket/serverWebSocket.js",
+    "client": "nodemon ./clase10/websocket/server.js",
+    "io" : "nodemon ./clase10/websocket_io/server_io.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andru-1987/backend_coder40845.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andru-1987/backend_coder40845/issues"
+  },
+  "homepage": "https://github.com/Andru-1987/backend_coder40845#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express-handlebars": "^6.0.6",
+    "moment": "^2.29.4",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.4",
+    "telegraf": "^4.10.0",
+    "ws": "^8.11.0"
+  }
+}
